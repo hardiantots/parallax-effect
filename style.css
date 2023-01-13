@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Quicksand:wght@500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Permanent Marker', cursive;
+    font-family: "Quicksand", sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root{
+    --white : #FFF;
+    --maroon : #4C0027;
+    --purple : #3F0071;
+    --orange : #FF7A00;
+}
+
+body{
+    background-color: var(--white);
+    min-height: 100vh;
+}
+
+#header--parallax{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1em 5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header--parallax .logo--web{
+    color: var(--white);
+    letter-spacing: 5px;
+    font-weight: 700;
+    font-size: 2em;
+    text-decoration: none;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--maroon);
+    font-family: 'Permanent Marker', cursive;
+}
+
+#header--parallax ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+}
+
+#header--parallax ul li{
+    list-style: none;
+}
+
+#header--parallax ul li a{
+    text-decoration: none;
+    background: var(--orange);
+    padding: 6px 15px;
+    color: var(--white);
+    border-radius: 0.5em;
+}
+
+#header--parallax ul li a:hover{
+    background: var(--maroon);
+    text-decoration: underline;
+    color: var(--white);
+    transition: 0.5s;
+}
+
+.page--one{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('./assets/1.png');
+    background-position: center center;
+    background-size: cover;
+    z-index: -10;
+    overflow: hidden;
+}
+
+.page--one::before{
+    content:'';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1.75em;
+    background: linear-gradient(to top, var(--maroon), transparent);
+    z-index: 10;
+}
+
+.page--one img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.page--one > #bat--pic1, #bat--pic1, #moon--pic{
+    object-fit: none;
+}
+
+#title--pageone{
+    position: absolute;
+    color: var(--maroon);
+    font-size: 8vw;
+    text-align: center;
+    letter-spacing: 5px;
+    line-height: 0.5em;
+    font-family: 'Permanent Marker', cursive;
+}
+
+#title--pageone span{
+    font-size: 0.25em;
+    letter-spacing: 4px;
+    font-weight: 500;
+}
+
+.page--two{
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: start;
+    padding: 8vh 16vh;
+    background: var(--maroon);
+}
+
+.page--two h2{
+    font-size: 4em;
+    color: var(--white);
+    margin-bottom: 1em;
+}
+
+.quotes--content{
+    display: grid;
+    grid-template-columns: 4fr 2fr 2fr 4fr;
+    gap: 5vh;
+}
+
+.quotes--content span{
+    font-weight: 700;
+}
+
+.page--two p{
+    font-size: 1.5em;
+    color: var(--white);
+}
+
+.contact--info{
+    width: 100%;
+    height: 100%;
+    padding: 2vh 16vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--purple);
+    gap: 5vh;
+}
+
+.contact--info span{
+    display: block;
+    padding-bottom: 5px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--orange);
+}
+
+.icon--socmed{
+    display: flex;
+    align-items: center;
+    gap: 2vh;
+}
+
+.icon--socmed a{
+    display: block;
+    color: var(--orange);
+    text-decoration: none;
+    padding: 1px;
+    font-size: 2em;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.icon--socmed a:hover{
+    background-color: var(--orange);
+    color: var(--purple);
+}
+
+@media screen and (max-width: 716px){
+    #header--parallax{
+        display: none;
+    }
+
+    .page--one > #bat--pic1, #bat--pic1, #moon--pic{
+        object-fit: cover;
+    }
+
+    .page--two{
+        padding: 2em 1em;
+    }
+
+    .quotes--content{
+        grid-template-columns: 2fr 2fr;
+    }
+
+    .quotes--content span{
+        font-weight: 700;
+    }
+    
+    .page--two p{
+        font-size: 0.75em;
+        color: var(--white);
+    }
+
+    .page--two h2{
+        font-size: 2em;
+        color: var(--white);
+        margin-bottom: 1em;
+    }
+
+    .contact--info{
+        flex-direction: column;
+        padding: 1em 2em;
+        gap: 0.5em;
+    }
+}
+
+@media screen and (max-width: 522px){
+    .page--one{
+        height: 60vh;
+    }
+
+    .page--one > #bat--pic1, #bat--pic1, #moon--pic{
+        object-fit: cover;
+    }
+}
